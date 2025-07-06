@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '524853043989985');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=524853043989985&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoFun X MT真人</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            padding-bottom: 120px;
+        }
+
+        /* ===== 修改：頂部快速註冊條 ===== */
+        .top-register-bar {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #00ffff, #0099cc);
+            padding: 8px 15px;
+            z-index: 1001;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 255, 255, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .top-register-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .top-register-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #000;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .top-register-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .top-register-btn {
+            background: rgba(0, 0, 0, 0.15);
+            color: #000;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .top-register-btn:hover {
+            background: rgba(0, 0, 0, 0.25);
+            transform: scale(1.05);
+        }
+
+        /* 联系万万按钮特殊样式 */
+        .contact-btn {
+            background: rgba(0, 0, 0, 0.15);
+            color: #000;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-btn:hover {
+            background: rgba(0, 0, 0, 0.25);
+            transform: scale(1.05);
+        }
+
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(0, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+            50% { transform: translateY(-120px) rotate(180deg); opacity: 1; }
+        }
+
+        .header {
+            padding: 15px 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .main-logo {
+            filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5));
+            transition: all 0.3s ease;
+        }
+
+        .main-logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 30px rgba(0, 255, 255, 0.8));
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .banner-section {
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+        }
+
+        .promo-banner {
+            margin: 30px 0;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .promo-banner-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: brightness(1.1) contrast(1.1);
+        }
+
+        .models-section {
+            margin: 60px 0 40px 0;
+            text-align: center;
+        }
+
+        .section-title-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title-image {
+            max-height: 80px;
+            width: auto;
+            filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5));
+            transition: all 0.3s ease;
+        }
+
+        .section-title-image:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 30px rgba(0, 255, 255, 0.8));
+        }
+
+        .model-gallery {
+            display: none;
+        }
+
+        .app-showcase {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 80px 0;
+            gap: 80px;
+        }
+
+        .phone-container {
+            position: relative;
+        }
+
+        .phone-glow {
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            right: -30px;
+            bottom: -30px;
+            background: radial-gradient(ellipse at center, rgba(0, 255, 255, 0.4) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: phone-pulse 3s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes phone-pulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .phone-image {
+            width: 350px;
+            height: auto;
+            filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5));
+            animation: phone-float 4s ease-in-out infinite;
+        }
+
+        @keyframes phone-float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        .phone-screen-content {
+            position: absolute;
+            top: 0%;
+            left: -20%;
+            width: 84%;
+            height: 88%;
+            border-radius: 35px;
+            overflow: hidden;
+        }
+
+        .phone-model-carousel {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .phone-model-carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            flex-shrink: 0;
+            filter: brightness(1.1) contrast(1.1);
+        }
+
+        .app-features {
+            max-width: 500px;
+        }
+
+        .feature-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00ffff 0%, #0099cc 50%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-align: center;
+            position: relative;
+            font-family: 'Microsoft JhengHei', 'Arial', sans-serif;
+        }
+
+        .feature-title::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent 0%, #00ffff 20%, #00ffff 80%, transparent 100%);
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+        }
+
+        .feature-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #0099cc 50%, transparent 100%);
+            border-radius: 1px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(0, 20, 40, 0.8) 0%, rgba(0, 40, 80, 0.6) 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            position: relative;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #00ffff 0%, #0099cc 100%);
+            border-radius: 2px 0 0 2px;
+        }
+
+        .feature-item:hover {
+            transform: translateX(12px);
+            border-color: rgba(0, 255, 255, 0.5);
+            box-shadow: 0 12px 35px rgba(0, 255, 255, 0.2);
+            background: linear-gradient(135deg, rgba(0, 30, 60, 0.9) 0%, rgba(0, 50, 100, 0.7) 100%);
+        }
+
+        .feature-number {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #00ffff;
+            margin-right: 20px;
+            min-width: 45px;
+            font-family: 'Courier New', monospace;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .feature-number::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, rgba(0, 255, 255, 0.2), rgba(0, 150, 200, 0.2));
+            border-radius: 12px;
+            z-index: -1;
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature-title-text {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            color: #b3d9ff;
+            line-height: 1.5;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* ===== 新增：社交媒体联系区块 ===== */
+        .social-contact-section {
+            margin: 60px 0 40px 0;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(0, 20, 40, 0.8) 0%, rgba(0, 40, 80, 0.6) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00ffff 0%, #ffffff 50%, #0099cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .social-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #b3d9ff;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .card-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card-btn {
+            display: flex;
+            align-items: center;
+            padding: 25px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .card-btn:hover::before {
+            left: 100%;
+        }
+
+        .telegram-card {
+            background: linear-gradient(135deg, rgba(0, 136, 204, 0.8) 0%, rgba(0, 150, 255, 0.6) 100%);
+            border-color: rgba(0, 136, 204, 0.5);
+        }
+
+        .telegram-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 136, 204, 0.4);
+            border-color: rgba(0, 136, 204, 0.8);
+        }
+
+        .instagram-card {
+            background: linear-gradient(135deg, rgba(225, 48, 108, 0.8) 0%, rgba(188, 42, 141, 0.6) 50%, rgba(81, 91, 212, 0.6) 100%);
+            border-color: rgba(225, 48, 108, 0.5);
+        }
+
+        .instagram-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(225, 48, 108, 0.4);
+            border-color: rgba(225, 48, 108, 0.8);
+        }
+
+        .tiktok-card {
+            background: linear-gradient(135deg, rgba(255, 0, 80, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border-color: rgba(255, 0, 80, 0.5);
+        }
+
+        .tiktok-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(255, 0, 80, 0.4);
+            border-color: rgba(255, 0, 80, 0.8);
+        }
+
+        .youtube-card {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.8) 0%, rgba(255, 87, 87, 0.6) 100%);
+            border-color: rgba(255, 0, 0, 0.5);
+        }
+
+        .youtube-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(255, 0, 0, 0.4);
+            border-color: rgba(255, 0, 0, 0.8);
+        }
+
+        .card-icon-wrapper {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card-icon-wrapper svg {
+            width: 30px;
+            height: 30px;
+            color: #ffffff;
+        }
+
+        .card-text {
+            flex: 1;
+        }
+
+        .card-text h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .card-text p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+        }
+
+        /* ===== 修改：浮動雙按鈕 ===== */
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+
+        .floating-btn {
+            display: inline-block;
+            padding: 18px 35px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .floating-register-btn {
+            color: #000;
+            background: linear-gradient(45deg, #00ffff, #ffffff, #ffaa00);
+            border-color: rgba(0, 255, 255, 0.3);
+            animation: floating-glow 2s ease-in-out infinite;
+        }
+
+        .floating-contact-btn {
+            color: #000;
+            background: linear-gradient(45deg, #00ffff, #ffffff, #ffaa00);
+            border-color: rgba(0, 255, 255, 0.3);
+            animation: floating-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes floating-glow {
+            0%, 100% {
+                box-shadow: 0 15px 30px rgba(0, 255, 255, 0.6);
+            }
+            50% {
+                box-shadow: 0 20px 40px rgba(0, 255, 255, 0.8);
+            }
+        }
+
+        .floating-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transition: left 0.6s;
+        }
+
+        .floating-btn:hover::before {
+            left: 100%;
+        }
+
+        .floating-register-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 255, 255, 0.8);
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffaa00);
+        }
+
+        .floating-contact-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 255, 255, 0.8);
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffaa00);
+        }
+
+        .cta-section {
+            display: none;
+        }
+
+        /* ===== 新增：半屏廣告專用檢測和優化 ===== */
+        @media (max-height: 500px) {
+            .top-register-bar {
+                padding: 6px 15px;
+            }
+
+            .top-register-text {
+                font-size: 0.8rem;
+            }
+
+            .top-register-btn {
+                padding: 4px 15px;
+                font-size: 0.8rem;
+            }
+
+            .header {
+                padding: 10px 0;
+            }
+
+            .main-logo {
+                height: 45px !important;
+            }
+
+            .banner-section {
+                margin: 20px 0;
+            }
+
+            .carousel img {
+                height: 200px;
+            }
+
+            .models-section {
+                margin: 30px 0 20px 0;
+            }
+
+            .app-showcase {
+                margin: 40px 0;
+                gap: 40px;
+            }
+
+            .social-contact-section {
+                margin: 30px 0 20px 0;
+                padding: 20px 15px;
+            }
+
+            .floating-buttons {
+                bottom: 10px;
+                gap: 10px;
+            }
+
+            .floating-btn {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .app-showcase {
+                flex-direction: column;
+                gap: 50px;
+                margin: 60px 0;
+            }
+
+            .phone-image {
+                width: 320px;
+            }
+
+            .feature-title {
+                font-size: 2.4rem;
+                text-align: center;
+            }
+
+            .app-features {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+
+            .card-buttons {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-register-content {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .top-register-buttons {
+                flex-direction: row;
+                gap: 8px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .top-register-btn {
+                padding: 5px 15px;
+                font-size: 0.85rem;
+                flex: 1;
+                text-align: center;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            body {
+                padding-bottom: 140px;
+            }
+
+            .header {
+                padding: 12px 0;
+            }
+
+            .main-logo {
+                height: 50px;
+            }
+
+            .banner-section {
+                margin: 25px 0;
+            }
+
+            .carousel img {
+                height: 250px;
+                object-fit: contain;
+                background: #000;
+            }
+
+            .carousel-container {
+                border-radius: 15px;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            }
+
+            .nav-dot {
+                width: 10px;
+                height: 10px;
+            }
+
+            .carousel-nav {
+                bottom: 15px;
+                gap: 8px;
+            }
+
+            .models-section {
+                margin: 40px 0 30px 0;
+            }
+
+            .section-title-image {
+                max-height: 60px;
+                max-width: 90%;
+            }
+
+            .app-showcase {
+                gap: 40px;
+                margin: 50px 0;
+            }
+
+            .phone-image {
+                width: 320px;
+            }
+
+            .phone-glow {
+                top: -25px;
+                left: -25px;
+                right: -25px;
+                bottom: -25px;
+            }
+
+            .feature-title {
+                font-size: 2.4rem;
+                margin-bottom: 30px;
+                letter-spacing: 2px;
+            }
+
+            .feature-item {
+                padding: 20px;
+                margin-bottom: 25px;
+                border-radius: 15px;
+            }
+
+            .feature-number {
+                font-size: 1.6rem;
+                width: 40px;
+                height: 40px;
+                margin-right: 15px;
+                min-width: 40px;
+            }
+
+            .feature-title-text {
+                font-size: 1.2rem;
+            }
+
+            .feature-description {
+                font-size: 1rem;
+            }
+
+            .social-contact-section {
+                margin: 40px 0 30px 0;
+                padding: 30px 15px;
+            }
+
+            .social-title {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .social-subtitle {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+
+            .card-buttons {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .card-btn {
+                padding: 20px;
+            }
+
+            .card-icon-wrapper {
+                width: 50px;
+                height: 50px;
+                margin-right: 15px;
+            }
+
+            .card-icon-wrapper svg {
+                width: 25px;
+                height: 25px;
+            }
+
+            .card-text h3 {
+                font-size: 1.2rem;
+            }
+
+            .card-text p {
+                font-size: 0.9rem;
+            }
+
+            .floating-buttons {
+                bottom: 15px;
+                left: 15px;
+                right: 15px;
+                transform: none;
+                width: calc(100% - 30px);
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .floating-btn {
+                flex: 1;
+                text-align: center;
+                padding: 16px 15px;
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+            }
+
+            .floating-register-btn:hover,
+            .floating-contact-btn:hover {
+                transform: translateY(-5px) scale(1.02);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top-register-text {
+                font-size: 0.8rem;
+            }
+
+            .top-register-btn {
+                padding: 4px 12px;
+                font-size: 0.8rem;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+
+            body {
+                padding-bottom: 120px;
+            }
+
+            .main-logo {
+                height: 45px;
+            }
+
+            .carousel img {
+                height: 200px;
+                object-fit: contain;
+                background: #000;
+            }
+
+            .carousel-container {
+                border-radius: 12px;
+            }
+
+            .section-title-image {
+                max-height: 50px;
+            }
+
+            .phone-image {
+                width: 280px;
+            }
+
+            .feature-title {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+
+            .feature-item {
+                padding: 18px;
+                margin-bottom: 20px;
+            }
+
+            .feature-number {
+                font-size: 1.4rem;
+                width: 35px;
+                height: 35px;
+                min-width: 35px;
+            }
+
+            .feature-title-text {
+                font-size: 1.1rem;
+            }
+
+            .feature-description {
+                font-size: 0.95rem;
+            }
+
+            .social-contact-section {
+                margin: 30px 0 20px 0;
+                padding: 25px 12px;
+            }
+
+            .social-title {
+                font-size: 1.8rem;
+            }
+
+            .social-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .card-btn {
+                padding: 18px;
+            }
+
+            .card-icon-wrapper {
+                width: 45px;
+                height: 45px;
+                margin-right: 12px;
+            }
+
+            .card-icon-wrapper svg {
+                width: 22px;
+                height: 22px;
+            }
+
+            .card-text h3 {
+                font-size: 1.1rem;
+            }
+
+            .card-text p {
+                font-size: 0.85rem;
+            }
+
+            .floating-btn {
+                padding: 14px 12px;
+                font-size: 1rem;
+            }
+
+            .floating-buttons {
+                bottom: 12px;
+                left: 12px;
+                right: 12px;
+                width: calc(100% - 24px);
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .top-register-buttons {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .top-register-btn {
+                width: 100%;
+            }
+
+            .phone-image {
+                width: 260px;
+            }
+
+            .feature-title {
+                font-size: 1.8rem;
+                letter-spacing: 0.5px;
+            }
+
+            .social-title {
+                font-size: 1.6rem;
+            }
+
+            .floating-buttons {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .floating-btn {
+                padding: 12px 15px;
+                font-size: 0.95rem;
+                width: 100%;
+            }
+
+            .carousel img {
+                height: 180px;
+                object-fit: contain;
+                background: #000;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @media (max-width: 768px) {
+            .nav-dot, .floating-btn, .card-btn {
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
+            }
+
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            .phone-glow {
+                animation: phone-pulse 4s ease-in-out infinite;
+            }
+
+            .phone-image {
+                animation: phone-float 5s ease-in-out infinite;
+            }
+
+            @keyframes phone-float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-15px); }
+            }
+
+            .feature-item:hover {
+                transform: translateX(5px);
+            }
+
+            .card-btn:hover {
+                transform: translateY(-5px) scale(1.01);
+            }
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 修改：頂部快速註冊條 -->
+    <div class="top-register-bar">
+        <div class="top-register-content">
+            <div class="top-register-text">🎮 GoFun x 女郎万万｜台妹真人陪玩 首充送你3888U</div>
+            <div class="top-register-buttons">
+                <a href="https://t.me/xin_165" class="top-register-btn contact-btn" target="_blank">
+                    联系万万
+                </a>
+                <a href="https://97y.me/ahevl" class="top-register-btn register-btn" id="topRegisterBtn" data-fb-track="CompleteRegistration" data-pixel-id="496057096794216">
+                    快速註冊
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <header class="header">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="GoFun Logo" class="main-logo" style="height: 60px; width: auto;">
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="models-section">
+            <div class="section-title-container">
+                <img src="images/GoFun_X_MT真人_largeX.webp" alt="GoFun X MT真人" class="section-title-image">
+            </div>
+        </section>
+
+        <section class="app-showcase">
+            <div class="phone-container slide-in-right">
+                <div class="phone-glow"></div>
+                <img src="images/1_phone-1.webp" alt="GoFun Mobile App" class="phone-image">
+                <div class="phone-screen-content">
+                    <div class="phone-model-carousel" id="phoneModelCarousel"></div>
+                </div>
+            </div>
+            <div class="app-features slide-in-left">
+                <h2 class="feature-title">最佳優惠</h2>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <span class="feature-number">1.</span>
+                        <div class="feature-content">
+                            <div class="feature-title-text">首存 100%｜最高 1288 U</div>
+                            <div class="feature-description">充值多少送多少，不限館別</div>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-number">2.</span>
+                        <div class="feature-content">
+                            <div class="feature-title-text">每日返水最高 1.2%</div>
+                            <div class="feature-description">輸贏都回饋，不設上限</div>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-number">3.</span>
+                        <div class="feature-content">
+                            <div class="feature-title-text">註冊就抽 88888 U</div>
+                            <div class="feature-description">登入即抽，人人均有機會中獎</div>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-number">4.</span>
+                        <div class="feature-content">
+                            <div class="feature-title-text">週週任務獎金</div>
+                            <div class="feature-description">完成指定任務，再領額外紅包</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="banner-section fade-in">
+            <div class="carousel-container">
+                <div class="carousel" id="bannerCarousel">
+                    <img src="images/webp_out/1.webp" alt="Banner 1">
+                    <img src="images/webp_out/2.webp" alt="Banner 2">
+                    <img src="images/webp_out/3.webp" alt="Banner 3">
+                    <img src="images/webp_out/4.webp" alt="Banner 4">
+                    <img src="images/webp_out/8.webp" alt="Banner 8">
+                </div>
+                <div class="carousel-nav" id="bannerNav">
+                    <div class="nav-dot active" data-slide="0"></div>
+                    <div class="nav-dot" data-slide="1"></div>
+                    <div class="nav-dot" data-slide="2"></div>
+                    <div class="nav-dot" data-slide="3"></div>
+                    <div class="nav-dot" data-slide="4"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 新增：社交媒体联系区块 -->
+        <section class="social-contact-section fade-in">
+            <h2 class="social-title">關注万万</h2>
+            <p class="social-subtitle">透過多種管道與万万保持聯繫，獲取最新優惠資訊</p>
+
+            <div class="card-buttons">
+                <a href="https://t.me/xin_165" class="card-btn telegram-card" target="_blank">
+                    <div class="card-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21.5 2l-19.5 9.5 7 2 10.5-9.5-8 11 4 2 6-15.5z"/>
+                        </svg>
+                    </div>
+                    <div class="card-text">
+                        <h3>Telegram</h3>
+                        <p>您的專屬小仙女万万</p>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/ww97_167?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="card-btn instagram-card" target="_blank">
+                    <div class="card-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </div>
+                    <div class="card-text">
+                        <h3>Instagram</h3>
+                        <p>關注万万獲取最新資訊</p>
+                    </div>
+                </a>
+
+                <a href="https://www.tiktok.com/@ww97_167?is_from_webapp=1&sender_device=pc" class="card-btn tiktok-card" target="_blank">
+                    <div class="card-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                        </svg>
+                    </div>
+                    <div class="card-text">
+                        <h3>TikTok</h3>
+                        <p>追蹤万万精彩短影音</p>
+                    </div>
+                </a>
+
+
+            </div>
+        </section>
+
+        <section style="display: none;">
+        </section>
+    </div>
+
+    <!-- 修改：浮動雙按鈕 -->
+    <div class="floating-buttons">
+        <a href="https://t.me/xin_165" class="floating-btn floating-contact-btn" target="_blank" id="contactBtn">联系万万</a>
+        <a href="https://97y.me/ahevl" class="floating-btn floating-register-btn" target="_blank" id="registerBtn" data-fb-track="CompleteRegistration">立即註冊</a>
+    </div>
+
+    <script>
+        async function updateLinkByLocation() {
+            const registerBtns = [
+                document.getElementById('registerBtn'),
+                document.getElementById('topRegisterBtn')
+            ];
+
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                const countryCode = data.country_code;
+
+                const newHref = (countryCode === 'KH' || countryCode === 'CN') ?
+                    'https://97y.me/MRAC7' : 'https://97y.me/ahevl';
+
+                registerBtns.forEach(btn => {
+                    if (btn) btn.href = newHref;
+                });
+
+            } catch (error) {
+                const language = navigator.language || navigator.userLanguage;
+                const newHref = (language.includes('zh-CN') || language.includes('km')) ?
+                    'https://97y.me/MRAC7' : 'https://97y.me/ahevl';
+
+                registerBtns.forEach(btn => {
+                    if (btn) btn.href = newHref;
+                });
+            }
+        }
+
+        async function updateLinkByLocationBackup() {
+            const registerBtns = [
+                document.getElementById('registerBtn'),
+                document.getElementById('topRegisterBtn')
+            ];
+
+            try {
+                const response = await fetch('https://ipinfo.io/json');
+                const data = await response.json();
+                const country = data.country;
+
+                if (country === 'KH' || country === 'CN') {
+                    registerBtns.forEach(btn => {
+                        if (btn) btn.href = 'https://97y.me/MRAC7';
+                    });
+                }
+
+            } catch (error) {
+                // 備用檢測失敗時不做任何動作
+            }
+        }
+
+        function createParticles() {
+            const bgAnimation = document.getElementById('bgAnimation');
+            const particleCount = window.innerWidth < 768 ? 30 : 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.width = Math.random() * 4 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                bgAnimation.appendChild(particle);
+            }
+        }
+
+        let bannerCurrentSlide = 0;
+        const bannerCarousel = document.getElementById('bannerCarousel');
+        const bannerDots = document.querySelectorAll('#bannerNav .nav-dot');
+        const bannerTotalSlides = 5;
+
+        function showBannerSlide(index) {
+            bannerCurrentSlide = index;
+            bannerCarousel.style.transform = `translateX(-${index * 100}%)`;
+
+            bannerDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextBannerSlide() {
+            bannerCurrentSlide = (bannerCurrentSlide + 1) % bannerTotalSlides;
+            showBannerSlide(bannerCurrentSlide);
+        }
+
+        bannerDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showBannerSlide(index));
+        });
+
+        setInterval(nextBannerSlide, 4000);
+
+        function createPhoneModelGallery() {
+            const phoneModelCarousel = document.getElementById('phoneModelCarousel');
+            const imageFiles = [
+                'images/mt/ah48n-4ldpx.webp',
+                'images/mt/amhji-uv5bp.webp',
+                'images/mt/aqjgq-s2whp.webp'
+            ];
+
+            imageFiles.forEach((src, index) => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = `GoFun 美女主播 ${index + 1}`;
+                img.loading = 'lazy';
+                phoneModelCarousel.appendChild(img);
+            });
+        }
+
+        let phoneModelCurrentSlide = 0;
+        const phoneModelTotalSlides = 3;
+
+        function showPhoneModelSlide(index) {
+            const phoneModelCarousel = document.getElementById('phoneModelCarousel');
+            phoneModelCurrentSlide = index;
+            phoneModelCarousel.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        function nextPhoneModelSlide() {
+            phoneModelCurrentSlide = (phoneModelCurrentSlide + 1) % phoneModelTotalSlides;
+            showPhoneModelSlide(phoneModelCurrentSlide);
+        }
+
+        function handleScrollAnimation() {
+            const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementTop < windowHeight * 0.8) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // 修改后的注册按钮点击事件处理，包含Facebook标准事件追踪
+        function setupRegisterButtonTracking() {
+            const registerBtns = [
+                document.getElementById('registerBtn'),
+                document.getElementById('topRegisterBtn')
+            ];
+
+            const contactBtns = [
+                document.getElementById('contactBtn')
+            ];
+
+            // 社交媒体按钮
+            const socialBtns = document.querySelectorAll('.card-btn');
+
+            // 注册按钮事件追踪
+            registerBtns.forEach(btn => {
+                if (btn) {
+                    btn.addEventListener('click', function(e) {
+                        // Facebook标准事件追踪 - CompleteRegistration
+                        if (typeof fbq !== 'undefined') {
+                            fbq('track', 'CompleteRegistration', {
+                                content_name: 'GoFun X 女郎注册',
+                                content_category: '在线娱乐',
+                                value: 0.00,
+                                currency: 'USD',
+                                content_ids: ['gofun_register'],
+                                contents: [{
+                                    id: 'gofun_register',
+                                    quantity: 1
+                                }]
+                            });
+
+                            // 也可以同时追踪Lead事件，获得更多数据
+                            fbq('track', 'Lead', {
+                                content_name: 'GoFun注册按钮点击',
+                                content_category: '游戏平台',
+                                value: 0.00,
+                                currency: 'USD'
+                            });
+                        }
+
+                        // 涟漪效果
+                        addRippleEffect(this, e);
+                    });
+                }
+            });
+
+            // 联系按钮事件追踪
+            contactBtns.forEach(btn => {
+                if (btn) {
+                    btn.addEventListener('click', function(e) {
+                        // Facebook标准事件追踪 - Contact
+                        if (typeof fbq !== 'undefined') {
+                            fbq('track', 'Contact', {
+                                content_name: '联系万万客服',
+                                content_category: '客户服务',
+                                value: 0.00,
+                                currency: 'USD'
+                            });
+                        }
+
+                        // 涟漪效果
+                        addRippleEffect(this, e);
+                    });
+                }
+            });
+
+            // 社交媒体按钮事件追踪
+            socialBtns.forEach(btn => {
+                if (btn) {
+                    btn.addEventListener('click', function(e) {
+                        const platform = this.classList.contains('telegram-card') ? 'Telegram' :
+                                        this.classList.contains('instagram-card') ? 'Instagram' :
+                                        this.classList.contains('tiktok-card') ? 'TikTok' :
+                                        this.classList.contains('youtube-card') ? 'YouTube' : '未知平台';
+
+                        // Facebook标准事件追踪 - 社交媒体点击
+                        if (typeof fbq !== 'undefined') {
+                            fbq('track', 'Contact', {
+                                content_name: `关注${platform}`,
+                                content_category: '社交媒体',
+                                value: 0.00,
+                                currency: 'USD'
+                            });
+                        }
+
+                        // 涟漪效果
+                        addRippleEffect(this, e);
+                    });
+                }
+            });
+        }
+
+        function addRippleEffect(element, event) {
+            const ripple = document.createElement('div');
+            ripple.style.position = 'absolute';
+            ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+            ripple.style.borderRadius = '50%';
+            ripple.style.transform = 'scale(0)';
+            ripple.style.animation = 'ripple 0.6s linear';
+            ripple.style.left = (event.offsetX - 10) + 'px';
+            ripple.style.top = (event.offsetY - 10) + 'px';
+            ripple.style.width = '20px';
+            ripple.style.height = '20px';
+
+            element.appendChild(ripple);
+
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        }
+
+        // 半屏廣告檢測
+        function detectHalfScreenAd() {
+            // 檢測視窗高度，如果太小可能是半屏廣告
+            if (window.innerHeight < 500) {
+                document.body.classList.add('half-screen-mode');
+
+                // 可以添加額外的半屏優化邏輯
+                console.log('檢測到可能的半屏廣告環境');
+
+                // 確保頂部註冊條更加突出
+                const topBar = document.querySelector('.top-register-bar');
+                if (topBar) {
+                    topBar.style.background = 'linear-gradient(90deg, #ff6b00, #ff8c42)';
+                    topBar.style.animation = 'pulse 2s infinite';
+                }
+            }
+        }
+
+        // 添加脈衝動畫
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.02); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            createPhoneModelGallery();
+            handleScrollAnimation();
+            updateLinkByLocation();
+            setTimeout(updateLinkByLocationBackup, 2000);
+            setInterval(nextPhoneModelSlide, 2500);
+            detectHalfScreenAd(); // 新增半屏檢測
+
+            // 设置注册按钮的Facebook事件追踪
+            setupRegisterButtonTracking();
+        });
+
+        window.addEventListener('scroll', handleScrollAnimation);
+        window.addEventListener('resize', detectHalfScreenAd); // 視窗大小改變時重新檢測
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        if (window.innerWidth <= 768) {
+            bannerCarousel.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            bannerCarousel.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        bannerCurrentSlide = (bannerCurrentSlide + 1) % bannerTotalSlides;
+                    } else {
+                        bannerCurrentSlide = (bannerCurrentSlide - 1 + bannerTotalSlides) % bannerTotalSlides;
+                    }
+                    showBannerSlide(bannerCurrentSlide);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
